@@ -226,12 +226,6 @@ See `system/version.md` for the convention's version history.
 
 ---
 
-## Inspirations
-
-Roam Research's bidirectional links. Andy Matuschak's evergreen notes. Tiago Forte's Building a Second Brain. Linus Lee's experimental knowledge tools. Obsidian's graph view. The simple idea that **plain Markdown in git outlives every notes app**.
-
----
-
 ## License
 
 Choose your own — the system is just Markdown files and ~600 lines of Python. No external runtime dependencies beyond Python 3.8+ stdlib.
