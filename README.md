@@ -11,19 +11,38 @@ tags:
 
 # Silt — A second brain that compounds over decades
 
-A file-based memory + journal system you co-own with an AI agent. Every day you free-dump 2–10 lines about what happened; the agent parses people, places, projects, events, tasks out of it and updates a curated knowledge graph in Markdown. Open the same folder in Obsidian and you have a navigable web of everything you've worked on, lived through, and learned about — connected to itself, not to a flat index.
+> **Silt is a second brain that compounds over decades, as plain Markdown files you own.**
+>
+> Five SKILL files for your AI coding agent (Claude Code, Codex, Cursor, Windsurf) — no app, no cloud, no account. Three you call directly:
+>
+> - **`/start`** — one-time bootstrap. Optionally scrapes your company's Notion / Confluence / Google Docs wiki, classifies every page (project / person / glossary / skip), and writes a fully cross-linked company graph to your disk in minutes. The intuition most engineers spend three months building, on day one.
+> - **`/journal`** — daily ritual. Type 2–10 free-form lines about what happened; the agent parses people, places, projects, tasks, and events, cross-files dated log lines into the right files, *and links every entity to every other entity it actually relates to*. The trip file links to the people on it; each person links back to the trip; the project links to the task; the task links to the teammate. Every write is previewed as a diff (`Apply? [y/n/edit]`) — nothing happens silently.
+> - **`/update`** — weekly sync. Pulls this week's tasks from your wiki, picks up new teammates discovered in chat connectors, audits the graph for drift and broken links.
+>
+> Two more skills work behind the scenes. **`task-management`** turns each task into its own Markdown file with full history — over years, `tasks/done/` becomes a browseable record of exactly what you shipped, the raw material for your CV in your own words. **`memory-management`** is a two-tier memory (hot cache + full tree) that lets the agent decode your shorthand: *"ask Todd about the PSR for Phoenix"* → *"ask Todd Martinez (Finance lead) about the Pipeline Status Report for Project Phoenix"* without you spelling it out twice.
+>
+> **The graph self-heals.** Three Python scripts keep it clean — `transform.py` regenerates wiki-links and `## Linked from` backlink footers after every entry, `audit.py` flags orphans and drift weekly, `repair_links.py` fixes references after file moves. Index files are tagged `#spine` and filtered out of the graph view, so what you see is meaningful relationships, not TOC noise — *a web, not a star around an index*.
+>
+> Every file is plain Markdown with path-based wiki-links — so the folder opens as a real, navigable knowledge graph in **Obsidian, Logseq, Foam, or any wiki-link-aware editor**, with no import step and no proprietary format. Or skip the graph view entirely and just `grep` the folder. Both work because the substrate is the same files.
+>
+> **External scraped sources are inputs, not pointers.** Wiki and chat connectors feed your tree, but nothing from them is stored — no URLs, no message IDs, no "last synced" fields. Lose Notion access tomorrow and your local memory is unaffected.
+>
+> After a year, *"what papers did I submit at the prefecture?"* or *"what was I working on with Todd in March?"* answer themselves in five seconds. The folder lives on your laptop — back it up however you want (private git, iCloud, encrypted disk, or nowhere at all). When you leave the job, the country, or the platform, the folder comes with you unchanged.
 
-**Built to last 20 years.** Plain-text Markdown only. No vendor lock-in, no proprietary database, no "last-synced" fields. Leaving a job, a country, or a tool costs you zero data — every file is self-contained prose.
+→ Read the [founding essay](founding-essay.md) for why I built this, after three notes-app graveyards in six years.
 
 ---
 
-## What it does
+## What you'll get back
 
-- **Daily journaling that becomes structured memory.** Type `/journal worked on Phoenix step 3 with Sarah, prefecture appointment for the visa, called mom about summer trip` — the agent extracts five entities (Phoenix project, Sarah coworker, prefecture place, visa topic, mom person), appends one dated line to each of their files, stubs anything new, and shows you a diff before writing.
-- **A real knowledge graph.** Every file uses Obsidian-style wiki-links with explicit display aliases. Open the vault in Obsidian's graph view and you see clusters of real relationships — the trip ↔ the people on it ↔ the city, the project ↔ its team ↔ its dependencies, family ↔ shared events. **Index files don't dominate the graph** — they're tagged `#spine` and filtered out so what you see is meaningful, not TOC noise.
-- **Tasks as files, not lines.** Each task gets its own Markdown file with a description and a dated log. Over years, `tasks/done/` becomes a browseable record of exactly what you shipped — the raw material for your CV in your own words.
-- **Decodes your shorthand.** A two-tier memory (hot cache + full tree) lets the agent translate "ask todd about the PSR for phoenix" → "ask Todd Martinez (Finance lead) about the Pipeline Status Report for Project Phoenix (Q2 launch)" without you ever spelling it out twice.
-- **External sources are inputs, not pointers.** Wiki and chat connectors (Notion, Slack, etc.) feed the local tree but nothing from them is stored — no URLs, no IDs, no "last synced". Lose access tomorrow and your local memory is unaffected.
+The graph view is what people screenshot. The thing that actually changes lives is the moments when life asks you a specific question about your own past and the folder has the answer.
+
+- **The professor's name from 4 years ago** when you need a recommendation letter and have forgotten everything but his face.
+- **CV bullets for what you shipped in 2023**, reconstructed from journal entries that were never written *as* CV bullets but turn out to be exactly that.
+- **The exact list of papers you submitted with a residence permit application**, dated, in the topic file, ready for the renewal a year later.
+- **The plan you sketched for a project in 2023** that you almost shipped and then didn't — the constraints, the open questions, the conversations with people whose names you'd otherwise have forgotten.
+
+These don't show up in the graph view. They show up when life needs an answer.
 
 ---
 
@@ -195,14 +214,18 @@ silt/
 
 ---
 
-## Privacy
+## Privacy & storage
 
-This vault contains personal data — names, addresses, employer details, sometimes health information. **Nothing in this system encrypts your data.** Treat the folder like a private journal:
+There's no Silt cloud, no account, no telemetry. The folder lives on your laptop and goes wherever you take it. You decide where it's backed up:
 
-- Don't push to a public git remote.
-- Use a private repo for sync, or rely on your usual file-sync (Dropbox, iCloud, Syncthing).
-- Add anything you want excluded from git to `.gitignore` (the `.obsidian/workspace.json` file is a good default — it tracks UI state).
-- Don't journal credentials or keys. Journal "I rotated my AWS key" — not the key itself.
+- **Local-only.** Folder lives on your hard drive and nowhere else. No one — not even the author — can see it. Default for sensitive sub-trees like `memory/life/health/`.
+- **Private git remote.** GitHub private repo, Gitea, GitLab self-hosted, a private Forgejo instance. Sync between your machines, have a backup, you're the only one who can read it.
+- **Disk sync, no git.** Drop the folder in iCloud Drive, Dropbox, Syncthing, a Time Machine backup. Same files, no commit history.
+- **Encrypted disk.** Put the folder on FileVault, an encrypted external drive, or inside a VeraCrypt container.
+
+Mix and match. A common setup: work tree in a private git remote (sync between laptops), `memory/life/health/` and other sensitive sub-trees git-ignored and local-only.
+
+The point: privacy is a property of where the files live, not of the tool. Silt doesn't ship with encryption because Silt doesn't ship with storage. **Don't journal credentials or keys** — write "I rotated my AWS key", not the key itself.
 
 ---
 

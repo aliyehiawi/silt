@@ -258,6 +258,14 @@ After step 8 (write) and step 8.5 (graph transform) both complete following a `y
 
 **Scope.** This step fires *only* on the default workflow `/journal <free-text>`. It does **not** fire on sub-commands (`--search`, `--on`, `--reflect`, `--reindex`, `--prune`), on `/start`, on `/update`, or on any manual edit performed outside the journal flow. The wider rule lives in [[CLAUDE.md|CLAUDE.md]] § Git policy.
 
+**Git guard.** Before running any git command, check whether the vault is tracked by git:
+
+```bash
+[ -d .git ] || exit 0   # no .git folder → vault is local-only, skip silently
+```
+
+If `.git` is absent, skip this entire step without printing anything. Some users keep their vault local and never push — this is a supported workflow.
+
 Run, in order:
 
 ```bash
