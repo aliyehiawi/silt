@@ -64,7 +64,7 @@ due: 2026-05-01
 updated: 2026-04-25
 tags:
   - work
-  - company/wiremind
+  - company/acme-corp
   - task
 ---
 

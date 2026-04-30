@@ -30,7 +30,7 @@ One-paragraph summary: what kind of institution, where, what's [[memory/me.md|me
 
 ## Related institutions
 
-- [[memory/life/orgs/{sibling}.md|Sibling Org]] — relationship (e.g. UJM ↔ École des Mines, T4EU member university, etc.)
+- [[memory/life/orgs/{sibling}.md|Sibling Org]] — relationship (e.g. main university ↔ affiliated school, network member, etc.)
 
 ## Log
 

@@ -12,10 +12,11 @@ Hot cache for the current working session. Kept short so it stays in context on 
 
 This vault is agent-agnostic. It works with any AI coding agent that reads `AGENTS.md` (Codex CLI, Cursor, GitHub Copilot, Windsurf, Amp, Devin, Jules, Factory…) and with **Claude Code**, which reads `CLAUDE.md` — that file is a symlink to this one, so both tools see identical content.
 
-**Workflows.** The five workflow folders each contain a `SKILL.md` describing the full procedure:
+**Workflows.** The six workflow folders each contain a `SKILL.md` describing the full procedure:
 
 - [[journal/SKILL.md|Journal Skill]] — daily free-dump entry → parsed memory writes (default `/journal <text>`)
-- [[start/SKILL.md|Start Skill]] — first-time setup of the vault
+- [[start/SKILL.md|Start Skill]] — first-time setup of the vault (run once)
+- [[onboard-company/SKILL.md|Onboard Company Skill]] — add a new employer / side job / client to an already-initialized vault (`/onboard-company <slug>`)
 - [[update/SKILL.md|Update Skill]] — weekly sync with company wiki + dashboard refresh
 - [[memory-management/SKILL.md|Memory Management Skill]] — two-tier memory architecture (this file + `memory/`)
 - [[task-management/SKILL.md|Task Management Skill]] — file-based task tracking under `work/companies/{co}/tasks/`
@@ -28,12 +29,12 @@ Each skill file is self-contained and tool-agnostic. Whichever agent is running,
 
 ```bash
 mkdir -p ~/.codex/prompts
-for s in journal start update task-management memory-management; do
+for s in journal start onboard-company update task-management memory-management; do
   ln -sf "$(pwd)/$s/SKILL.md" "$HOME/.codex/prompts/$s.md"
 done
 ```
 
-After that, `/journal <text>`, `/start`, `/update` work in Codex too. Without the symlinks, you can still invoke the workflows by saying e.g. "run the journal flow with X" or "follow journal/SKILL.md with this entry: X" — the agent will read the file and follow it.
+After that, `/journal <text>`, `/start`, `/onboard-company <slug>`, `/update` all work in Codex too. Without the symlinks, you can still invoke the workflows by saying e.g. "run the journal flow with X" or "follow journal/SKILL.md with this entry: X" — the agent will read the file and follow it.
 
 **Using with other agents.** Anything that reads `AGENTS.md` will pick up the project rules from this file and find the workflows via the pointers above. Codex's discovery walk also looks for `AGENTS.md.override.md` for local-only overrides — feel free to add one if you want machine-specific tweaks that shouldn't be committed.
 

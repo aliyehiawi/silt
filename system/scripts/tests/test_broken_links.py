@@ -1,7 +1,7 @@
 """
 Regression test: audit must catch broken wiki-link targets that aren't placeholders.
 This prevents the "ghost node" failure mode (e.g. [[companies/wiremind/...]] when the
-real path is [[companies/wiremind-cargo/...]]).
+real path is [[companies/acme-corp/...]]).
 """
 import sys
 import shutil

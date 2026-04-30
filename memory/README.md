@@ -77,9 +77,9 @@ Format: `[[<path-from-vault-root>|<display>]]`
 
 Examples:
 
-- `[[memory/work/companies/wiremind-cargo/people/mathilde-bleu.md|Mathilde Bleu]]`
+- `[[memory/work/companies/acme-corp/people/todd-martinez.md|Todd Martinez]]`
 - `[[memory/life/events/2024-08-motorcycle-accident.md|motorcycle accident]]`
-- `[[memory/work/companies/wiremind-cargo/projects/pythie-cargo.md|Pythie-cargo]]`
+- `[[memory/work/companies/acme-corp/projects/ml-pipeline.md|ML Pipeline Project]]`
 - `[[TASKS.md|TASKS]]` (root-level files use just the filename)
 
 Rules:

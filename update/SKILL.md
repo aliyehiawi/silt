@@ -104,9 +104,9 @@ If 2a–2d created or refreshed task files, run a focused cross-link sweep over 
 
 This is the same pass [[start/SKILL.md|start]] runs after the first-time scrape — keeps the graph from drifting back into TOC-shape as new tasks come in.
 
-#### 2e. First-time company-wiki scrape (one-time, during `/productivity:start` or explicit request)
+#### 2e. First-time company-wiki scrape (one-time, when onboarding a company)
 
-This is **not** part of the weekly `/update` flow. It happens once when a new company is being set up. See [[start/SKILL.md|Start Skill]] → "First-time wiki scrape" for the full flow, summarized here:
+This is **not** part of the weekly `/update` flow. It happens once when a new company is being set up. The first time, it runs as part of [[start/SKILL.md|/start]]; for any subsequent employer / side job / client, run [[onboard-company/SKILL.md|/onboard-company]]. The full flow is documented in [[onboard-company/SKILL.md|onboard-company/SKILL.md]] § 4; summarized here:
 
 - User hands the agent the company home page.
 - The agent walks **all reachable pages, all levels**, classifying each: company overview / project / team / people / past-task / glossary / social / skip (confidential or handbook).
@@ -299,5 +299,6 @@ If audit reports issues:
 - [[journal/SKILL.md|Journal Skill]]
 - [[memory-management/SKILL.md|Memory Management Skill]]
 - [[memory/README.md|Memory README]]
+- [[onboard-company/SKILL.md|Onboard Company Skill]]
 - [[start/SKILL.md|Start Skill]]
 - [[task-management/SKILL.md|Task Management Skill]]

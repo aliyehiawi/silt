@@ -474,7 +474,7 @@ def main(only_files=None):
     for rel in auto_set:
         sources = sorted(inbound.get(rel, set()))
         append_backlinks(rel, sources)
-    Path("/sessions/jolly-confident-franklin/mnt/outputs/backlinks.json").write_text(
+    (BOOKLET / "system" / "backlinks.json").write_text(
         json.dumps({k: sorted(v) for k, v in inbound.items()}, indent=2, ensure_ascii=False))
     print("Done.")
 

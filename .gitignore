@@ -54,3 +54,5 @@ outputs/
 # ─── Python script cache ───
 __pycache__/
 *.pyc
+system/scripts/__pycache__/
+system/backlinks.json

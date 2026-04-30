@@ -1,3 +1,12 @@
+---
+type: note
+title: founding-essay
+tags:
+  - note
+---
+
+# founding-essay
+
 > **Silt is a second brain that compounds over decades, as plain Markdown files you own.**
 >
 > Five SKILL files for your AI coding agent (Claude Code, Codex, Cursor, Windsurf) — no app, no cloud, no account. Three you call directly:
@@ -14,7 +23,7 @@
 >
 > **External scraped sources are inputs, not pointers.** Wiki and chat connectors feed your tree, but nothing from them is stored — no URLs, no message IDs, no "last synced" fields. Lose Notion access tomorrow and your local memory is unaffected.
 >
-> After a year, *"what papers did I submit at the prefecture?"* or *"what was I working on with Todd in March?"* answer themselves in five seconds. The folder lives on your laptop — back it up however you want (private git, iCloud, encrypted disk, or nowhere at all). When you leave the job, the country, or the platform, the folder comes with you unchanged. Open source under MIT — [github.com/aliyehiawi/silt](https://github.com/aliyehiawi/silt).
+> After a year, *"what papers did I submit at the prefecture?"* or *"what was I working on with a colleague in March?"* answer themselves in five seconds. The folder lives on your laptop — back it up however you want (private git, iCloud, encrypted disk, or nowhere at all). When you leave the job, the country, or the platform, the folder comes with you unchanged. Open source under MIT — [github.com/example/silt](https://github.com/example/silt).
 >
 > *Below: why I built it, after three notes-app graveyards in six years.*
 
@@ -74,11 +83,11 @@ The name is also a warning to my future self. I won't get to walk on the silt I 
 
 The graph view is what people screenshot. The thing that actually changed my life is more boring: the moments when I needed something from my own past and got it back in five seconds.
 
-A few weeks ago I was writing a request for a recommendation letter from a professor I had four years ago. I could see his face. I could not for the life of me remember his name. Pre-Silt, that's a dead end — the email I sent him in 2022 lives in a Lebanese university account I no longer have. Now: two queries against my journal. Found him on the second one, where I'd written "office hours with [name] about the project." The letter went out the same hour.
+A few weeks ago I was writing a request for a recommendation letter from a professor I had four years ago. I could see his face. I could not for the life of me remember his name. Pre-Silt, that's a dead end — the email I sent them lives in an old university account I no longer have access to. Now: two queries against the journal. Found the person on the second one, where I'd written "office hours with [name] about the project." The letter went out the same hour.
 
 Last month I needed to update my CV with what I actually shipped in 2023. Two and a half years ago. I have always been bad at this — the work blurs together once it's done, and the version of me writing the CV is not the version of me who wrote the code. Pre-Silt, I would have stared at the bullet "shipped X improvements to Y" and produced something vague. Now I have 600 daily journal entries from that period, all dated, all cross-linked to the projects and people involved. The bullets wrote themselves out of three short queries.
 
-Last week I needed the date I applied for my French residence permit and the exact list of papers I submitted. The renewal is coming up in six months and I want the same documents ready. Pre-Silt, that's a panic search through old emails and a folder on a hard drive I don't backup. Now: open `memory/life/topics/titre-de-sejour.md`, scroll the Log section, every appointment, every document, every prefecture interaction is dated and listed.
+Last week I needed the date I applied for my French residence permit and the exact list of papers I submitted. The renewal is coming up in six months and I want the same documents ready. Pre-Silt, that's a panic search through old emails and a folder on a hard drive I don't backup. Now: open [[memory/life/topics/titre-de-sejour.md|Titre De Sejour]], scroll the Log section, every appointment, every document, every prefecture interaction is dated and listed.
 
 And — the one I use most often — looking up things I was thinking three years ago. The plan I sketched for a project I never shipped. The constraints I'd identified before they became obvious to everyone else. The conversations I had about it with people whose names I'd otherwise have forgotten. There's something specific that happens when you can read your past self's actual notes — not the reconstructed memory you have, the actual notes, dated, in your own words. It's the closest thing to time travel I've found.
 
@@ -105,7 +114,7 @@ That's the whole install. Five files into your agent's folder, one slash command
 Today is a Sunday in April 2026. I just opened my terminal, typed two sentences:
 
 ```
-/journal sunday run with mira, dress fitting confirmed for klara's wedding,
+/journal sunday run with Sam, dress fitting confirmed for the wedding,
 helix component library v3 primitives are ready for review
 ```
 
@@ -117,11 +126,11 @@ In six months I have ~150 daily entries and forty-five entity files. Each entry 
 
 ## The graph is just one way in
 
-There's a knowledge graph because the wiki-links between files form one. If I open the folder in Obsidian, I can scroll the graph view and see clusters — the trip-with-Anthony cluster, the apartment-hunt cluster, the Wiremind cluster. It's beautiful and useful when I'm exploring.
+There's a knowledge graph because the wiki-links between files form one. If I open the folder in Obsidian, I can scroll the graph view and see clusters — the trip-with-colleagues cluster, the apartment-hunt cluster, the work-project cluster. It's beautiful and useful when I'm exploring.
 
 But the graph is layered on top. Underneath it is just a folder of files.
 
-If I never open the graph view, the files still answer questions. `grep -r "PSR escalation" memory/` returns the line. The file `memory/life/topics/titre-de-sejour.md` opens in TextEdit and reads as a normal document. I can `cat memory/life/people/family/malak.md` from a terminal on a flight in 2031 and see exactly what I wrote about her in 2026, dated, with the cross-references intact.
+If I never open the graph view, the files still answer questions. `grep -r "PSR escalation" memory/` returns the line. The file [[memory/life/topics/titre-de-sejour.md|Titre De Sejour]] opens in TextEdit and reads as a normal document. I can `cat memory/life/people/family/partner.md` from a terminal on a flight in 2031 and see exactly what I wrote about her in 2026, dated, with the cross-references intact.
 
 That's the durable contract. The graph is a feature; the files are the product. Different humans want different access paths — some scroll graph views, some grep, some open files in a markdown editor and read top-to-bottom, some build their own queries. All of those work because the substrate is just plain Markdown.
 
@@ -156,4 +165,4 @@ Five years from now you'll have something you can stand on.
 
 ---
 
-Silt is open source under MIT. The repo, the example vault, and the four-rule graph convention that keeps it from collapsing are all at [github.com/aliyehiawi/silt](https://github.com/aliyehiawi/silt).
+Silt is open source under MIT. The repo, the example vault, and the four-rule graph convention that keeps it from collapsing are all at [github.com/example/silt](https://github.com/example/silt).

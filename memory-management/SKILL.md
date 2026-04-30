@@ -188,7 +188,7 @@ Use tables for compactness. Target ~100 lines total, split into Work and Life se
 ### People (hot ~15)
 | Who | Relation |
 |-----|----------|
-| **Mom** | [[memory/life/people/family/leila-kassir.md\|Leila Kassir]], [city] |
+| **Mom** | [[memory/life/people/family/parent.md|Sarah Chen's Mom]], [city] |
 | **Samir** | [[memory/life/people/friends/samir.md\|Samir]], Close friend, Paris |
 → Full: memory/life/people/
 
@@ -518,7 +518,7 @@ Daily ritual is `/productivity:journal` (or `/journal`) — a free-dump entry th
 | Nickname | If associated person is in hot cache | glossary.md (all nicknames) |
 | Place (prefecture, clinic, etc.) | Key ones only | life/places/{name}.md |
 | Organization (bank, insurance, etc.) | Key ones only | life/orgs/{name}.md |
-| School / institution | All of them (current + past) | life/orgs/{slug}.md (e.g. lebanese-university.md, ujm.md, al-rida-school.md) |
+| School / institution | All of them (current + past) | life/orgs/{slug}.md (e.g. your-university.md, grad-program.md, high-school.md) |
 | Health provider | GP + current specialists | life/health/providers/{name}.md |
 | Event (trip, wedding, surgery) | Upcoming / ongoing only | life/events/{YYYY-name}.md |
 | Company (current employer) | Reference from "Me" | work/companies/{co}/{co}.md |
